@@ -8,4 +8,4 @@ https://kmancz.github.io/React-Random-Number-Generator/
 
 ## Code
 
-All the main code is in `src/App.tsx`
+All the main code is in `src/App.tsx` file.
