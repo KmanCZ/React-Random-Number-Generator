@@ -11,6 +11,7 @@ function App() {
   );
 }
 
+//Props for form
 interface FormInterface {
   display: Dispatch<React.SetStateAction<number>>;
 }
@@ -20,6 +21,7 @@ function Form(props: FormInterface) {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(100);
 
+  //Checks if there is any input and saves it
   const changeHandler = (
     e: ChangeEvent<HTMLInputElement>,
     setter: Dispatch<React.SetStateAction<number>>
@@ -29,6 +31,7 @@ function Form(props: FormInterface) {
     }
   };
 
+  //Generates random number and displays it
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
     const random = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -45,9 +48,6 @@ function Form(props: FormInterface) {
           id="min"
           value={min}
           max={max}
-          /* onChange={(e) =>
-            !isNaN(parseInt(e.target.value)) && setMin(parseInt(e.target.value))
-          } */
           onChange={(e) => changeHandler(e, setMin)}
         />
       </section>
@@ -59,9 +59,6 @@ function Form(props: FormInterface) {
           id="max"
           min={min}
           value={max}
-          /* onChange={(e) =>
-            !isNaN(parseInt(e.target.value)) && setMax(parseInt(e.target.value))
-          } */
           onChange={(e) => changeHandler(e, setMax)}
         />
       </section>
