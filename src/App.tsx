@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, Dispatch } from "react";
+import React, { useState, FormEvent, Dispatch, ChangeEvent } from "react";
 
 function App() {
   const [randomDisplay, setRandomDisplay] = useState(0);
@@ -20,6 +20,15 @@ function Form(props: FormInterface) {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(100);
 
+  const changeHandler = (
+    e: ChangeEvent<HTMLInputElement>,
+    setter: Dispatch<React.SetStateAction<number>>
+  ) => {
+    if (!isNaN(parseInt(e.target.value))) {
+      setter(parseInt(e.target.value));
+    }
+  };
+
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
     const random = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -35,9 +44,11 @@ function Form(props: FormInterface) {
           name="min"
           id="min"
           value={min}
-          onChange={(e) =>
+          max={max}
+          /* onChange={(e) =>
             !isNaN(parseInt(e.target.value)) && setMin(parseInt(e.target.value))
-          }
+          } */
+          onChange={(e) => changeHandler(e, setMin)}
         />
       </section>
       <section>
@@ -46,10 +57,12 @@ function Form(props: FormInterface) {
           type="number"
           name="max"
           id="max"
+          min={min}
           value={max}
-          onChange={(e) =>
+          /* onChange={(e) =>
             !isNaN(parseInt(e.target.value)) && setMax(parseInt(e.target.value))
-          }
+          } */
+          onChange={(e) => changeHandler(e, setMax)}
         />
       </section>
       <button type="submit">Generate</button>
