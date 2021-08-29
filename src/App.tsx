@@ -1,12 +1,19 @@
 import React, { useState, FormEvent, Dispatch, ChangeEvent } from "react";
+import GithubCorner from "react-github-corner";
 
 function App() {
   const [randomDisplay, setRandomDisplay] = useState(0);
 
   return (
     <>
-      <Form display={setRandomDisplay} />
-      {randomDisplay}
+      <GithubCorner href="https://github.com/KmanCZ/React-Random-Number-Generator/" />
+      <h1>Random Number Generator</h1>
+      <main>
+        <Form display={setRandomDisplay} />
+        <div className="result">
+          Your number is: <span className="bolt">{randomDisplay}</span>
+        </div>
+      </main>
     </>
   );
 }
@@ -80,7 +87,9 @@ function Form(props: FormInterface) {
           onChange={(e) => changeHandler(e, setDec)}
         />
       </section>
-      <button type="submit">Generate</button>
+      <div className="button">
+        <button type="submit">Generate</button>
+      </div>
     </form>
   );
 }
