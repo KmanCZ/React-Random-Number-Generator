@@ -20,22 +20,26 @@ function Form(props: FormInterface) {
   const { display } = props;
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(100);
+  const [dec, setDec] = useState(0);
 
   //Checks if there is any input and saves it
   const changeHandler = (
     e: ChangeEvent<HTMLInputElement>,
     setter: Dispatch<React.SetStateAction<number>>
   ) => {
-    if (!isNaN(parseInt(e.target.value))) {
-      setter(parseInt(e.target.value));
+    if (!isNaN(parseFloat(e.target.value))) {
+      setter(parseFloat(e.target.value));
     }
   };
 
   //Generates random number and displays it
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
-    const random = Math.floor(Math.random() * (max - min + 1)) + min;
-    display(random);
+
+    const random = Math.random() * (max - min) + min;
+    const addDec = parseFloat(random.toFixed(dec));
+
+    display(addDec);
   };
 
   return (
@@ -48,6 +52,7 @@ function Form(props: FormInterface) {
           id="min"
           value={min}
           max={max}
+          step="any"
           onChange={(e) => changeHandler(e, setMin)}
         />
       </section>
@@ -59,7 +64,20 @@ function Form(props: FormInterface) {
           id="max"
           min={min}
           value={max}
+          step="any"
           onChange={(e) => changeHandler(e, setMax)}
+        />
+      </section>
+      <section>
+        <label htmlFor="dec">Decimals </label>
+        <input
+          type="number"
+          name="dec"
+          id="dec"
+          min="0"
+          max="5"
+          value={dec}
+          onChange={(e) => changeHandler(e, setDec)}
         />
       </section>
       <button type="submit">Generate</button>
