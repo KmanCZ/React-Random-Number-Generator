@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/React-Random-Number-Generator/static/css/main.7176885d.chunk.css",
-    "main.js": "/React-Random-Number-Generator/static/js/main.af7d47d6.chunk.js",
-    "main.js.map": "/React-Random-Number-Generator/static/js/main.af7d47d6.chunk.js.map",
+    "main.css": "/React-Random-Number-Generator/static/css/main.18e34f20.chunk.css",
+    "main.js": "/React-Random-Number-Generator/static/js/main.b677cf56.chunk.js",
+    "main.js.map": "/React-Random-Number-Generator/static/js/main.b677cf56.chunk.js.map",
     "runtime-main.js": "/React-Random-Number-Generator/static/js/runtime-main.4b170cd3.js",
     "runtime-main.js.map": "/React-Random-Number-Generator/static/js/runtime-main.4b170cd3.js.map",
-    "static/js/2.037f6b15.chunk.js": "/React-Random-Number-Generator/static/js/2.037f6b15.chunk.js",
-    "static/js/2.037f6b15.chunk.js.map": "/React-Random-Number-Generator/static/js/2.037f6b15.chunk.js.map",
+    "static/js/2.cd40ec8f.chunk.js": "/React-Random-Number-Generator/static/js/2.cd40ec8f.chunk.js",
+    "static/js/2.cd40ec8f.chunk.js.map": "/React-Random-Number-Generator/static/js/2.cd40ec8f.chunk.js.map",
     "index.html": "/React-Random-Number-Generator/index.html",
-    "static/css/main.7176885d.chunk.css.map": "/React-Random-Number-Generator/static/css/main.7176885d.chunk.css.map",
-    "static/js/2.037f6b15.chunk.js.LICENSE.txt": "/React-Random-Number-Generator/static/js/2.037f6b15.chunk.js.LICENSE.txt"
+    "static/css/main.18e34f20.chunk.css.map": "/React-Random-Number-Generator/static/css/main.18e34f20.chunk.css.map",
+    "static/js/2.cd40ec8f.chunk.js.LICENSE.txt": "/React-Random-Number-Generator/static/js/2.cd40ec8f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4b170cd3.js",
-    "static/js/2.037f6b15.chunk.js",
-    "static/css/main.7176885d.chunk.css",
-    "static/js/main.af7d47d6.chunk.js"
+    "static/js/2.cd40ec8f.chunk.js",
+    "static/css/main.18e34f20.chunk.css",
+    "static/js/main.b677cf56.chunk.js"
   ]
 }
